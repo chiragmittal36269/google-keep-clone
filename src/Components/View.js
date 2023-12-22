@@ -6,18 +6,21 @@ function View() {
 
     const [allNotes, setAllNotes] = useState(getAllNotes());
 
-    comst[search, setSearch] = useState([])
+    const [search, setSearch] = useState([])
 
     function getAllNotes() {
-        return localStorage.getItem("NotesData") || [];
+        return JSON.parse(localStorage.getItem("NotesData")) || [];
     }
 
-    useEffect(() => { })
+    useEffect(() => {
+        setAllNotes([...allNotes.filter(item => {
+        })])
+    }, [setSearch])
 
     return (
         <div>{allNotes.length === 0 ? <div>Please Create a Note.</div> : <div>
-            <SearchNote />
-            <ShowNote />
+            <SearchNote setSearch={setSearch} />
+            <ShowNote allNotes={allNotes} />
         </div>
         }
 
