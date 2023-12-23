@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.view {
+    width: 100%;
+    height: 100%;
+}
+
+.no-notes {
+    width: 100%;
+    height: 100%;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+button.create {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: greenyellow;
+    cursor: pointer;
+}
+
+button.create:hover {
+    background-color: white;
+}
+
+button.create:active {
+    transform: scale(0.8);
+}
+
+.createNote {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.createNote form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.createNote form h4 {
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+}
+
+button.search {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: greenyellow;
+    cursor: pointer;
+}
+
+button.search:hover {
+    background-color: white;
+}
+
+button.search:active {
+    transform: scale(0.8);
+}
+
+button.search img {
+    width: 45%;
+}
+.createNote form label {
+    display: inline-block;
+    width: 100%;
+}
+
+.createNote form input,
+.createNote form textarea {
+    width: 100%;
+    outline: none;
+    height: 30px;
+    border: 1px solid grey;
+    padding-left: 5px;
+    border-radius: 5px;
+}
+
+.createNote form .content textarea {
+    height: 100px;
+}
+
+.createNote form .submit,
+.createNote form .cancel {
+    width: 130px;
+    padding: 3px 2px;
+    border-radius: 5px;
+    /* border: none; */
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.colors {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.colors input {
+    padding: 0px !important;
+}
+
+.buttons .choose {
+    width: 130px;
+    padding: 3px 2px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-size: 18px;
+}
+
+.cancel-modal {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.cancel-modal p {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.view-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+    gap: 10px;
+}
+
+.searchInput {
+    width: 100%;
+    /* height: 100%; */
+    /* margin-bottom: 30px; */
+    position: sticky;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchInput form {
+    width: 270px;
+    height: 70px;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+    cursor: pointer;
+    background: rgba(245, 245, 245, 0.8);
+    border: none;
+    color: black;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.searchInput form input {
+    width: 240px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.searchInput form button {
+    width: 50px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.searchInput form button img {
+    width: 25px;
+    transform: translate(0px, 3px);
+}
+
+.showNote {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.showNote .note {
+    border: 2px solid black;
+    width: 130px;
+    height: 250px;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 10px;
+}
+
+h4.title {
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
+}
+
+p.content {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+}
+
+hr {
+    height: 2px;
+    border-width: 0;
+    background-color: black;
+}
+
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.openingNote {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.openingNote h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.openingNote p {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.close-btn:hover {
+    color: whitesmoke;
+    border: 2px solid black;
+    background-color: black;
+}
+
+.editNote {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.editNote .title {
+    width: 100%;
+    padding: 4px;
+}
+
+.editNote .title label {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+}
+
+.editNote .title input {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.editNote .content {
+    width: 100%;
+    padding: 4px;
+}
+
+.editNote .content label {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+}
+
+.editNote .content textarea {
+    width: 100%;
+    height: 250px;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.editNote .bgColor label,
+.editNote .textColor label {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+}
+
+.editNote .bgColor input,
+.editNote .textColor input {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.editNote .buttons {
+    width: 100%;
+    height: 50px;
+}
+
+.editNote .buttons button.save,
+.editNote .buttons button.cancel {
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

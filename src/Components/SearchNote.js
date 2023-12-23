@@ -1,9 +1,26 @@
-import React from 'react'
+import React from "react";
 
-function SearchNote() {
+function SearchNote({ setSearch }) {
+    // const [searching, setSearching] = useState("");
+
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     setSearch(searching);
+    // }
+
     return (
-        <div>SearchNote</div>
-    )
+        <div className="searchInput">
+            <form action="">
+                <input
+                    type="search"
+                    name=""
+                    id=""
+                    onChange={(e) => setSearch(e.target.value)}
+                    placeholder="Enter the search term"
+                />
+            </form>
+        </div>
+    );
 }
 
-export default SearchNote
+export default SearchNote;
